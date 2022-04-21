@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8d1f2b53e0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500;1,700&family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <title>Beauty Bar Website</title>
+</head>
+<body>
+
+<!---------------- (1) BANNER ACROSS TOP ------------------->
+
+<section class="banner" id="banner">
+    <p>Free domestic shipping on orders $50+ with code <span id="code">FREESHIP</span> until August 1<sup>st</sup>, 2022</p>     
+</section>
+
+<!---------------- (2) EMAIL OVERLAY ------------------->
+
+<section class="email-overlay">
+    <div class="overlay__container">
+        <i id="x-mark" class="fa-solid fa-xmark"></i>
+        <div class="overlay__container-image">
+            <img id="image" src="./images/overlay-image.jpeg" width="400">
+        </div>
+        <div class="overlay__container-info">
+            <h2>UNLOCK<span id="discount"><br>15% Off</br></span>your order</h2> 
+            <input type="text" class="email" placeholder="Email Address"></input>
+            <button class="email-button">continue</button>
+            <h6>By clicking Continue, I want to receive promotional emails from Meili's. I am a Canadian resident, 16+ and understand Meili's <span id="policy">Privacy Policy, Terms of Use,</span>  and <span id="policy">CA Privacy </span> govern the use of the information about me.</h6>
+        </div>
+    </div>
+</section>
+
+<!---------------- (3) NAVBAR  ------------------->
+<section class="navbar" id="navbar">    
+    <div class="logo">
+        <img id="image" src="./images/logo.png" alt="">
+    </div>
+    <div class="searchbox">
+        <i id="m-glass" class="fas fa-search"></i>
+        <input type="text" id="search-input" placeholder="Search Beauty Bar">
+    </div>
+
+    <div class="links">
+        <a href="#our-story">Our Story</a>
+        <a href="#best-sellers">Best Sellers</a>
+        <a href="#skincare">Skincare</a>
+        <a href="#body">Body</a>
+    </div>
+
+    <div class="icons">
+        <i id="heart" class="fa-regular fa-heart"></i>
+        <i id="user" class="fa-regular fa-user"></i> 
+        <div class="cart-btn">
+            <span class="nav-icon">
+                <i id="cart-icon" class="fa-regular fa-bag-shopping"></i>
+            </span>
+            <div class="cart-items">0</div>        
+        </div>
+    </div>
+</section>
+
+<!---------------- (4) SIDE MENU ---------------------->
+
+<div class="side-menu">
+    <label>
+        <input type="checkbox" name="">
+        <div class="bar">
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+        </div>
+    </label>    
+    
+    <div class="side-menu-links">
+        <img id="image" src="./images/logo.png">
+        <a href="#our-story">Our Story</a>
+        <a href="#best-sellers">Best Sellers</a>
+        <a href="#skincare">Skincare</a>
+        <a href="#fragrance">Fragrance</a>
+        <a href="#body">Body</a>
+    </div>
+</div>
+    
+<!---------------- (5) SLIDER/HERO (wtih arrows) ------------------->
+
+<section class="hero" id="hero">
+    <h1>discover</h1>
+    <div class="hero-slide">    
+        <img id="image" src="./images/washing-face.jpg" width="300px">
+        <img id="image" src="./images/apply-cream.jpeg" width="300px">
+        <img id="image" src="./images/exfoliating-face.jpg" width="300px">
+        <img id="image" src="./images/asian-serum.jpg" width="300px">
+    </div>
+
+        <div class="hero-text">
+        <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </h1>
+        </div>
+    </div>
+</section>
+
+<!---------------- (6) NEW PRODUCTS SLIDER ------------------->
+
+<section class="product" id="product">
+    <h1>What's New</h1>
+    <i id="left-arrow" class="fa fa-chevron-left"></i>
+    <i id="right-" class="fa fa-chevron-right"></i>
+    
+    <div class="product-container">
+
+        <!-------------------- 
+        <div class="product-card">
+            <div class="product-image">
+                <span class="viewBtn">View Details</span>
+                <img id="image" src="./images/prod1.jpg" alt="">
+                <span class="new-price">  $12.99</span>
+            </div>
+            <div class="product-info">
+                <h2 class="product-brand">Cetaphil Daily Cleanser</h2>
+                <p class="description">Suitable for sensitve skin</p>
+            </div>
+        </div>
+        ------------------------>
+
+    </div>
+</section>
+
+<!------------ (a) MODAL FOR EVERY PRODUCT -------------------->
+
+<div class="merchmodal">
+    <div class="merch-content">
+        <img src="" id="merch-image" alt="image">
+        <div class="merch-leftside">   
+        <i id="star" class="fa-regular fa-star"></i>        
+        </div>
+        <div class="merch-rightside">
+            <i class ="merch-close fa-solid fa-xmark"></i>
+            <div class="merch-detail">            
+                <h2 class="merch-brand"></h2>
+                <h4 class="subtext">All Skin Types, including Sensitive Skin</h4>
+                <p class="merch-description"></p>
+                
+                <div class="reviews">
+                    <i id="rating" class="fa-regular fa-star"></i>        
+                    <i id="rating" class="fa-regular fa-star"></i>        
+                    <i id="rating" class="fa-regular fa-star"></i>        
+                    <i id="rating" class="fa-regular fa-star"></i>        
+                    <h4 class="review"></h4>
+                </div>
+               
+                <span class="buttons">
+                <h3 class="merch-price"></h3>     
+                    <span class="quantity">
+                    <p>Quantity</p>
+                        <span class="units">1</span>
+                        <span class="add">+</span>
+                    </span>                    
+                    <span class="merch-buyBtn">Add to Cart</span>
+                    <span class="merch-wishBtn">Add to Wishlist</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---------------- (7) SOMETHING??  ------------------->
+
+<section class="something">
+</section>
+<!---------------- (7) SOMETHING MODAL  ------------------->
+
+<!---------------- (8a) CART OVERLAY starts  ------------------->
+
+<section class="cart-overlay">
+    <div class="cart">
+        <span class="close-cart">
+            <i id="close-cart" class="fas fa-window-close"></i>
+        </span>
+        <h2>Your cart</h2>
+        <div class="cart-content">
+            <!--- cart item starts 
+            <div class="cart-row">
+                <div class="cart-item">
+                    <img id="image" width="80px" height="80px" src="./images/products3.jpg" alt="">
+                    <div>
+                        <h4>Product Name</h4>                
+                        <button class="remove">Remove</button>
+                    </div>  
+                    <div> 
+                        <button id="down">-</button>  
+                        <span class="number">10</span>
+                        <button id="up">+</button>
+                        <h5 class="price">$14.99</h5>
+                    </div>
+                </div>
+            </div>
+           
+             --->
+        </div>
+            <div class="cart-footer">
+                <h3>Total: $<span class="total">0</span></h3>       
+                <button id="checkout">Checkout</button>    
+                <button id="clear-cart">Clear</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!---------------- (7b) CART OVERLAY ends ------------------->
+
+<!-------------- (8a) BEST SELLERS starts --------------->
+
+<h1>Shop Best Sellers</h1>
+<section class="best-sellers">
+
+</section>
+
+
+<!-------------- (8a) modal --------------->
+
+<div class="modal">
+    <div class="modal-content">
+        <img id="modal-image" src="" alt="image">
+        <div class="modal-leftside">
+            <i id="star" class="fa-regular fa-star"></i>        
+        </div>
+        <div class="modal-rightside">
+            <i class ="modal-close fa-solid fa-xmark"></i>
+            <div class="modal-detail">            
+                <h2 class="modal-brand"></h2>
+                <h4 class="subtext">All Skin Types, including Sensitive Skin</h4>
+                <p class="modal-description"></p>
+                <p class="modal-read"></p>
+                <p class="modal-ingredients"></p> 
+                
+                <div class="reviews">
+                    <i id="rating" class="fa-regular fa-star"></i>        
+                    <i id="rating" class="fa-regular fa-star"></i>        
+                    <i id="rating" class="fa-regular fa-star"></i>        
+                    <i id="rating" class="fa-regular fa-star"></i>        
+                    <h4 class="review"></h4>
+                </div>
+                    <h3 class="modal-price"></h3>
+                <span class="buttons">
+                    <span class="quantity">
+                    <p>Quantity</p>
+                        <span class="units">1</span>
+                        <span class="add">+</span>
+                    </span>                    
+                    <span class="modal-buyBtn">Add to Cart</span>
+                    <span class="modal-wishBtn">Add to Wishlist</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--------------- (8b) BEST SELLERS ends ------------------->
+
+
+
+<!---------------- (9) FOOTER/SOCIALS/LINKS starts  ------------------->
+
+<div class="footer">
+    <div class="socials">
+        <a href="#contact">Contact Us</a>
+        <a href="#track">Track My Order</a>
+        <a href="#terms">FAQ</a>
+        <a href="#giftcards">Gift Cards</a>
+    </div>
+
+    <div class="social-icons">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fab fa-tiktok"></i>
+    </div>
+
+    <div class="help">
+    <p>Customer Service</p>
+    <p>Call 416-709-3315
+    <p>help@beautybar.net.ca</p>
+
+    <div class="hours">
+        <p>Store Hours:</p>
+        <p>Monday - Friday 10am-7pm</p>
+    </div>
+
+    </div>
+</div>
+
+<p>Copyright © 2022 Carmen Chow All Rights Reserved </p>
+
+<!---------------- (9b) FOOTER/SOCIALS/LINKS ends ------------------->
+
+
+<script src="index.js"></script>
+<script src="store.js"></script>
+
+</body>
+</html>

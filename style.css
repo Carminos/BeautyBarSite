@@ -1,0 +1,864 @@
+:root{
+    --mainTransition: all 0.3s linear;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: Helvetica;
+}
+html, body{
+    width: auto;
+    overflow-x: hidden;
+}
+
+h1{
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #000; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+    padding: 20px;
+} 
+ 
+h1 span{ 
+     background:#fff; 
+     padding:0 10px; 
+}
+
+
+/* -------------- TEST MODAL ----------------------- */
+
+
+
+/*-------------- (1a) BANNER starts ------------------ */
+p{
+    text-transform: uppercase;
+    font-size: 1rem;
+    text-align: center;
+    align-items: center;
+    line-height: 50px;
+}
+#code{
+    font-weight: bolder;
+}
+sup{
+    font-size: .5rem;
+}
+.banner{
+    width: 100%;
+    height: 60px;
+    background-color: peachpuff; 
+    position: sticky;
+}
+/*-------------- (1b) BANNER ends ------------------ */
+
+/*-------------- (2a) NAVBAR starts ------------------ */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    position: sticky; 
+    top: 0;
+    height: 80px;
+    width: 100%;
+    align-items: center;
+    background-color: whitesmoke;
+    z-index: 1;
+}
+.logo{
+    padding: 0 20px;
+}
+.links{
+    display: flex;
+    padding-right: 10px;
+}
+.links a{
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    justify-content: space-around;
+    padding-left: 20px;
+    color: rgb(63, 23, 23);
+    position: relative;
+    font-weight: bold;
+    text-align: center;
+}
+.links a::before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background: rgb(195,103,34);
+    background: linear-gradient(0deg, rgba(195,103,34,1) 0%, rgba(253,45,253,1) 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+a:hover::before {
+    transform: scaleX(1);
+}
+.icons,
+.icons img id="image"{
+    display: flex;
+    align-items: right;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 12px;
+    color: grey;
+    font-size: 1.5rem;
+}  
+.icons i:hover{
+    color: orange;
+    justify-content: space-evenly;
+}
+.searchbox{
+    width: 500px;
+    height: 80px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+}
+.searchbox input{
+    width: 600px;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-weight: 300;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 5px;
+    display: flex;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+#m-glass{
+    padding: 15px 15px;
+    color: black;
+    font-size: 16px;
+}
+/*-------------- (2b) NAVBAR ends ------------------ */
+
+/*-------------- (3a) SIDE MENU starts ------------------ */
+.side-menu{
+    position: fixed;
+    left: -600px;
+    width: 600px;
+    height: 100%;
+    transition: all 0.5s ease;
+    visibility: hidden; 
+    top: 0;
+    left: 0;
+    background: whitesmoke;
+}
+.side-menu-links a{
+    display: block;
+    text-decoration: none;
+    align-items: center;
+    padding-left: 80px;
+    padding-top: 40px;
+    font-size: 26px;
+    color: rgb(63, 23, 23);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.side-menu-links a:hover{
+    color: rgb(195,103,34);
+}
+        /* ----------- hamburger menu ------------ */
+
+input[type="checkbox"]{
+    -webkit-appearance: none;
+    visibility: hidden;
+    display: none;
+}
+.bar{
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    padding-top: 60px;
+    padding-left: 40px;
+}
+.bar .middle{
+    height: 3px;
+    width: 40px;
+    background: black;
+    border-radius: 50px;
+    position: absolute;
+    transition: 5s ease;
+}
+.bar .top{
+    bottom: 10px;
+    height: 3px;
+    width: 40px;
+    background: black;
+    border-radius: 50px;
+    position: absolute;
+    transition: 0.3s ease;
+}
+.bar .bottom{
+    top: 12px;
+    bottom: 14px;
+    height: 3px;
+    width: 40px;
+    background: black;
+    border-radius: 50px;
+    position: absolute;
+    transition: 10.3s ease;
+}
+input[type="checkbox"]:checked ~ .bar .top{
+    transform: rotate(-45deg);
+    width: 40px;
+    transform-origin: right;
+    /*top: -25px;*/
+}
+input[type="checkbox"]:checked ~ .bar .bottom{
+    transform: rotate(45deg);
+    width: 40px;
+    transform-origin: right;
+    /*top: 25px;*/
+    
+}
+input[type="checkbox"]:checked ~ .bar .middle{
+    transform: translateX(20px);
+    opacity: 0;
+}
+    /* ----------- hamburger menu ends ------------ */
+/*-------------- (3b) SIDE MENU ends ------------------ */
+
+/*-------------- (4a) EMAIL MODAL/OVERLAY ------------------ */
+
+.email-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.8);
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease-in-out;
+    opacity: 1;
+    display: none; 
+}
+#x-mark{
+    font-size: 2rem;
+    position: fixed;
+    top: 0; 
+    right: 0;
+    cursor: pointer;
+    padding: 20px;
+    background: black;
+}
+.email-overlay--visible{
+    visibility: visible;
+    opacity: 1;
+}
+.overlay__container{
+    max-width: 700px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: rgb(194, 118, 177);
+    color: white; 
+}
+.overlay__container-image{
+    width: 100%;
+    height: 100%;
+}
+.overlay__container-image img id="image"{
+    height: 100%;
+}
+.overlay__container-info{
+    width: 100%;
+    padding: 15px 20px;
+}
+h2{
+    text-transform: uppercase;
+    font-size: 2rem;
+    line-height: 3.5rem;
+}
+#discount{
+    font-size: 4.5rem;
+    line-height: 4rem;
+    padding-top: 2rem;
+}
+h6{
+    font-size: 8px;
+    color: white;
+    font-weight: bold;
+}
+.overlay__container-info{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+#policy{
+    text-decoration-line: underline;
+}
+.email{
+    padding: 5px;
+    max-width: 200px;
+    width: 100%;
+    margin: 5px;
+}
+.email-button{
+    width: 100%;
+    max-width: 200px;
+    color: black;
+    text-transform: uppercase;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+/* ------------------(4b) OVERLAY ENDS-------------------------*/ 
+
+/* ----------------- (5a) HERO starts ---------------------------- */
+.hero{
+    background: #f7ff00;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #db36a4, #f7ff00);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #db36a4, #f7ff00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.hero-slide{
+    display: flex;
+}
+/* ----------------- (5b) HERO ends ---------------------------- */
+
+/* ----------------- (6a) NEW PRODUCTS starts ---------------------------- */
+
+#left-arrow, #right-arrow{
+    font-size: 2rem;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: black;
+    opacity: 0.5;
+}
+#left-arrow{
+    left: 30px;
+    top: 40%;
+}
+#right-arrow{
+    right: 30px;
+    top: 40%;
+}
+.product{
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+.product-container{
+    padding: 0 10vw;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    height: 500px;
+}
+.product-container::-webkit-scrollbar {
+    display: none;
+}
+.product-card{
+    flex: 0 0 auto;
+    width: 200px;
+    height: 270px;
+    margin-right: 40px;
+    background-color:#fff; 
+    cursor: pointer;
+  /*  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+}
+.product-card:hover{
+    box-shadow: 20px 20px 80px -44px #000;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+.product-image{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+/*.product .product-image{
+    cursor: pointer;
+}
+*/
+.new-price{
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    padding-left: 20px;
+    top: 10px;
+    right: 10px;
+    position: absolute;
+}
+.product-info{
+    width: 100%;
+    height: 50px;
+    padding: 0px;
+    border-radius: 20px;
+    position: relative;
+}
+.product-info h2{
+    font-size: 0.8rem;
+    font-weight: light;
+    text-transform: capitalize;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+.description{
+    width: 100%;
+    line-height: 10px;
+    overflow: hidden;
+    font-size: 0.7rem;
+    text-align: center;
+    font-weight: light;
+    text-transform: capitalize;
+    margin-top: 0px;
+}
+
+.viewBtn{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+#image{
+    cursor: pointer;
+}
+/*
+.viewBtn{
+    position: absolute;
+    background-color:black;
+    opacity: 0.5;
+    color: white;
+    z-index: 1;
+    padding: 5px;
+    top: 90%;
+    right: 0;
+    transition: var(--mainTransition);
+    transform: translateX(101%);
+    border: none;
+    outline: none;
+    width: 60%;
+    cursor: pointer;
+}
+.product-card:hover .viewBtn {
+    transform: translateX(0);
+}    
+
+*/
+
+.addCart-btn{
+    padding: 2px;
+    background: whitesmoke;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+    align-items: center;
+    justify-content:center;
+    width: 100px;
+    font-weight: light;
+    text-transform: capitalize;
+}
+
+/* -------- modal for new products starts ------ */
+.modal, 
+.merchmodal {   
+    position: fixed; /* stays in place */
+    display: none; /* Hidden by default */
+    z-index: 1; /* sit on top */
+    overflow: auto; /* Enable scroll if needed */
+    left: 0; top: 0;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.65);
+    transition: all 0.4s ease-in-out;
+}
+.modal-content, 
+.merch-content{
+    align-items: center;
+    top: 15%;
+    left: 2%;
+    background-color: white;
+    padding-top: 150px; 
+    margin-top: 10px;
+    margin: auto;
+    display: block;
+    width: 70%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    border: 7px solid lightgrey;
+    font-family: 'Merriweather', serif;
+}
+.modal-close,
+.merchmodal .merch-close{
+    top: 15px;
+    right: 20px;
+    position: absolute;
+    color: black;
+    font-size: 25px;
+    opacity: 0.5;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.modal-leftside,
+.merch-leftside{
+    top: 0%;
+    left: 0%;
+    width: 35%;
+    height: 50vh;  
+    position: relative;  
+}
+.modal-leftside img,
+.merch-leftside img{
+    top: 0%;
+    left: 0%;
+    padding-top: 0px;
+    object-fit: cover;
+    width: 80%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+}
+#star{
+    color: grey;
+    font-size: 1.3rem;
+    position: absolute;
+    cursor: pointer;
+    top: 0px;
+    right: 45px;
+    padding: 20px;
+}
+#star:hover{
+    color: rgb(80, 152, 152);
+}
+.modal-rightside, 
+.merch-rightside{
+    width: 45%;
+    height: 50vh;
+    margin: 30px;
+    text-transform: capitalize;
+    font-size: 2em;
+}
+.modal-brand,
+.merch-brand{
+    font-size: 0.1;
+    color: black;
+    text-transform: capitalize;
+    font-family: 'Merriweather', serif;
+}
+.subtext{
+    font-style: italic;
+    font-size: 14px;
+    font-weight: lighter;
+    font-family: 'Lora', serif;
+}
+.modal p,
+.merch-modal p{
+    font-size: 0.2;
+    text-transform: capitalize;
+    line-height: 16px;
+    text-align: left;
+}
+.modal-description,
+.merch-description{
+    font-weight: light;
+    text-transform: lowercase;
+    text-align: left;
+    margin-top: 20px;
+    font-size: 1rem;
+    line-height: 18px;
+}
+.modal-price,
+.merch-price{
+    font-size: 30px;
+    padding-top: 20px;
+    font-family: 'Merriweather', serif;
+}
+.modal-ingredients,
+.merch-ingredients{
+    font-style: italic;
+    line-height: 14px;
+    padding-top: 10px;
+}
+#rating{
+    font-size: 0.8rem;
+    color: rgb(80, 152, 152);
+}
+.review{
+    font-weight: lighter;
+    font-size: 12px;
+    text-transform: none;
+    padding-left: 10px;
+}
+.reviews{
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    font-weight: lighter;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.modal-buyBtn,
+.merch-buyBtn{
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 15px;
+    margin-top: 10px;
+    align-items: center;
+    max-height: 45px;
+}
+.modal-buyBtn:hover,
+.merch-buyBtn:hover{
+    background-color: white;
+    color: black;
+    border: black solid 1px;
+    transition-duration: 0.5s ease-in-out;
+}
+.modal-wishBtn,
+.merch-wishBtn{
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 10px;
+    margin-top: 10px;
+    border: black solid 1px;
+    align-items: center;
+    max-height: 45px;
+}
+.modal-wishBtn:hover,
+.merch-wishBtn:hover{
+    background-color: black;
+    color: white;
+    border: black solid 1px;
+}
+.quantity{
+    display: flex;
+    font-size: 1.1rem;
+    border: 0.9px solid lightgrey;
+    border-top: none solid transparent;
+    padding: 10px;
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-top: 10px;
+    max-height: 45px;
+    width: 80px;
+    position: relative;
+}
+.quantity p{
+    font-size: 10px;
+    font-weight: lighter;
+    text-transform: capitalize;
+    text-align: left;
+    padding: 10px;
+    position: absolute;
+    top: -35px;
+    left: -10px;
+}
+.units{
+    align-items: center;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.add{
+    color: black;
+    text-align: right;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* -------- modal for new products ends ------ */
+
+/* --------------- (6b) NEW PRODUCTS ends ---------------------------- */
+
+
+/* --------------- (7a) SOMETHING starts ---------------------------- */
+
+.something{
+    background-color: #f7ff00;
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    padding-top: 30px;
+}
+.container-1{
+    display: flex;
+}
+
+/* --------------- (7a) SOMETHING MODAL starts ---------------------------- */
+
+/*---------------- (8a) CART OVERLAY starts  -------------------*/
+.cart-overlay {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: var(--mainTransition);
+    background: rgba(243, 237, 242, 0.9);
+    z-index: 2;
+    overflow: auto;
+    justify-content: right;
+    align-items: right;
+}
+.cart {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    z-index: 3;
+    background: white;
+    padding: 1.5rem;
+    transition: var(--mainTransition);
+    transform: translateX(100%); 
+}
+.cart-item{
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr auto;
+    grid-column-gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+.cart-item img {
+    width: 75px;
+    height: 75px;
+}
+.price{
+    font-size:14px;
+    font: red;
+}
+.remove{
+    padding: 3px;
+    font-size: .7rem;
+    cursor: pointer;
+    width: 70px;
+}
+#remove:hover{
+    background: black;
+    color: white;
+}    
+#up, #down{
+  /*  background: wheat; */
+    border: 1px solid grey;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+#up:hover, #down:hover{
+    background: lightblue;
+}
+#number{
+    border: 1px solid grey;
+    padding: 4px 10px;
+}
+#checkout{
+    background: wheat;
+    border: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content:center;
+    margin: auto;
+    color: black;
+}
+#clear-cart{
+    cursor: pointer;
+    color: black;
+}
+.showCart {
+  transform: translateX(0);
+}
+.transparentBcg {
+  visibility: visible;
+}
+.close-cart {
+  font-size: 1.7rem;
+  cursor: pointer;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  color: black;
+}
+.cart h2 {
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 2rem;
+}
+.cart-footer {
+  margin-top: 2rem;
+  letter-spacing: var(--mainSpacing);
+  text-align: center;
+}
+.cart-footer h3 {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+/*---------------- (8b) CART OVERLAY ends -------------------*/
+
+
+/*---------------- (9a) BEST SELLERS starts  -------------------*/
+
+.best-sellers{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    row-gap: 25px;
+}
+.product-card{
+    row-gap: 10px;
+}
+.best-sellers .product-image{
+    cursor: pointer;
+}
+
+/*---------------- (9b) BEST SELLERS ends -------------------*/
+
+/* --------------- (10a) FOOTER/SOCIALS starts ---------------------------- */
+
+.footer{
+    background-color: lightpink;
+}
+.socials a{
+    display: flex;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    justify-items: center;
+    justify-content: space-between;
+}
+/* -------------- (10b) FOOTER/SOCIALS ends ---------------------------- */
+
+
+
+/* ------------- MEDIA QUERIES -------------------- */
+
+@media screen and (min-width: 768px) {
+    .cart {
+        width: 30vw;
+        min-width: 450px;
+      }
